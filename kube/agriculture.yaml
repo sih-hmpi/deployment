@@ -19,5 +19,5 @@ spec:
         image: hatakekakashihk/sih-agriculture:latest
         imagePullPolicy: Always
         ports:
-        - name: agriculture-port
+        - name: agri-port
           containerPort: 8000

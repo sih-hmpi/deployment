@@ -9,7 +9,7 @@ spec:
   selector:
     app: agriculture
   ports:
-  - name: agriculture-port
+  - name: agri-port
     port: 8000
     targetPort: 8000
   type: ClusterIP
