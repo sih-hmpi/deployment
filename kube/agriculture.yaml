@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: agriculture
-  labels: 
+  labels:
     app: agriculture
 spec:
   replicas: 1
@@ -21,4 +21,18 @@ spec:
         ports:
         - name: agriculture-port
           containerPort: 8000
-      
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: agriculture-service
+  labels:
+    app: agriculture
+spec:
+  selector:
+    app: agriculture
+  ports:
+  - name: agriculture-port
+    port: 8000
+    targetPort: 8000
+  type: ClusterIP
