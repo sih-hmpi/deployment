@@ -1,19 +1,19 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: agriculture-ingress
+  name: classification-ingress
   annotations:
     nginx.ingress.kubernetes.io/use-regex: "true"
 spec:
   ingressClassName: nginx
   rules:
-    - host: agriculture.devopshemantkumar.info
+    - host: classification.devopshemantkumar.info
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: agriculture-service
+                name: classification-service
                 port:
                   number: 8000

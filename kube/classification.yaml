@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: agriculture
+  name: classification
   labels:
-    app: agriculture
+    app: classification
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: agriculture
+      app: classification
   template:
     metadata:
       labels:
-        app: agriculture
+        app: classification
     spec:
       containers:
-      - name: agriculture
-        image: hatakekakashihk/sih-agriculture:latest
+      - name: classification
+        image: hatakekakashihk/sih-classification:latest
         imagePullPolicy: Always
         ports:
-        - name: agri-port
+        - name: class-port
           containerPort: 8000
