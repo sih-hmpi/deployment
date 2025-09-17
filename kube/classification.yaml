@@ -20,4 +20,4 @@ spec:
         imagePullPolicy: Always
         ports:
         - name: class-port
-          containerPort: 8000
+          containerPort: 5000

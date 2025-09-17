@@ -16,4 +16,4 @@ spec:
               service:
                 name: classification-service
                 port:
-                  number: 8000
+                  number: 5000
