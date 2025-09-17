@@ -1,0 +1,78 @@
+version: '3.8'
+
+services:
+  agriculture-engine:
+    build:
+      context: ../agriculture-engine
+      dockerfile: Dockerfile
+    ports:
+      - "8001:8000"
+    networks:
+      - app-network
+
+  aquatic-engine:
+    build:
+      context: ../Aquatic-Engine
+      dockerfile: Dockerfile
+    ports:
+      - "8002:8000"
+    networks:
+      - app-network
+
+  bigdata:
+    build:
+      context: ../bigdata
+      dockerfile: Dockerfile
+    ports:
+      - "8003:8000"
+    networks:
+      - app-network
+
+  classification-engine:
+    build:
+      context: ../classification_engine
+      dockerfile: Dockerfile
+    ports:
+      - "5001:5000"
+    networks:
+      - app-network
+
+  core-engine:
+    build:
+      context: ../core_engine
+      dockerfile: Dockerfile
+    ports:
+      - "8004:8000"
+    networks:
+      - app-network
+
+  disease-engine:
+    build:
+      context: ../Disease_Engine
+      dockerfile: Dockerfile
+    ports:
+      - "8005:8000"
+    networks:
+      - app-network
+
+  frontend-web:
+    build:
+      context: ../Frontend-web
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    networks:
+      - app-network
+
+  remedial-engine:
+    build:
+      context: ../remedial_engine
+      dockerfile: Dockerfile
+    ports:
+      - "8010:8010"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
