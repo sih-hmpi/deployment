@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: agriculture
+  labels: 
+    app: agriculture
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: agriculture
+  template:
+    metadata:
+      labels:
+        app: agriculture
+    spec:
+      containers:
+      - name: agriculture
+        image: hatakekakashihk/sih-agriculture:latest
+        imagePullPolicy: Always
+        ports:
+        - name: agriculture-port
+          containerPort: 8000
+      
