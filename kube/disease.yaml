@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: disease
+  labels: 
+    app: disease
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: disease
+  template:
+    metadata:
+      labels:
+        app: disease
+    spec:
+      containers:
+      - name: disease
+        image: hatakekakashihk/sih_disease_engine:latest
+        imagePullPolicy: Always
+        ports:
+        - name: disease-port
+          containerPort: 8000
+      
